@@ -1,7 +1,7 @@
-package com.example.flowtestapp.app.di
+package com.example.flowtestapp.di
 
-import com.example.flowtestapp.app.model.settings.AppSettings
-import com.example.flowtestapp.app.model.settings.SharedPreferencesAppSettings
+import com.example.flowtestapp.core_db.settings.AppSettings
+import com.example.flowtestapp.core_db.settings.SharedPreferencesAppSettings
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

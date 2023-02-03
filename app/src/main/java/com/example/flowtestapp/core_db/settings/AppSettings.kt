@@ -1,4 +1,4 @@
-package com.example.flowtestapp.app.model.settings
+package com.example.flowtestapp.core_db.settings
 
 interface AppSettings {
 

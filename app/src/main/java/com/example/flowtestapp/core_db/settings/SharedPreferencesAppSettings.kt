@@ -1,4 +1,4 @@
-package com.example.flowtestapp.app.model.settings
+package com.example.flowtestapp.core_db.settings
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
