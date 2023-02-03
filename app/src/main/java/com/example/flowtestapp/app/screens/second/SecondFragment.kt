@@ -27,7 +27,7 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
         }
 
         lifecycleScope.launchWhenStarted {
-            viewModel.state.collect{ number ->
+            viewModel.state.collect { number ->
                 binding.textView.text = number.toString()
             }
         }
