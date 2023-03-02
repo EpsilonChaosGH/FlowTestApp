@@ -25,7 +25,8 @@ class FirstViewModel @Inject constructor(
     private fun listenCurrentNumber() {
         viewModelScope.launch {
             repository.listenCurrentNumber().collect { number ->
-                _state.value = number?.number ?: 0
+                val list = number?.testValueList
+                _state.value = list?.get(0)?.value1 ?: 1111
             }
         }
     }
