@@ -5,10 +5,12 @@ import com.example.flowtestapp.core_db.room.entities.CounterDbEntity
 
 fun CounterDbEntity.toCounter() = Counter(
     key = counter_key,
-    number = number
+    number = number,
+    testValueList = testValueList
 )
 
 fun Counter.toCounterDbEntity() = CounterDbEntity(
     counter_key = key,
-    number = number
+    number = number,
+    testValueList = testValueList
 )

@@ -3,6 +3,7 @@ package com.example.flowtestapp.core_data
 import com.example.flowtestapp.core_data.mappers.toCounter
 import com.example.flowtestapp.core_data.mappers.toCounterDbEntity
 import com.example.flowtestapp.core_data.models.Counter
+import com.example.flowtestapp.core_data.models.TestValue
 import com.example.flowtestapp.core_db.settings.AppSettings
 import com.example.flowtestapp.core_db.room.AppDatabase
 import kotlinx.coroutines.flow.Flow
@@ -24,7 +25,25 @@ class RepositoryImpl @Inject constructor(
     }
 
     override suspend fun getRandomNumber() {
-        val x = Random.nextInt(100)
-        appDatabase.counterDao().insertAll(Counter("NUMBER_KEY", x).toCounterDbEntity())
+        appDatabase.counterDao().insertAll(
+            Counter(
+                "NUMBER_KEY",
+                Random.nextInt(100),
+                listOf(
+                    TestValue(
+                        Random.nextInt(1000),
+                        Random.nextInt(1000)
+                    ),
+                    TestValue(
+                        Random.nextInt(100),
+                        Random.nextInt(100)
+                    ),
+                    TestValue(
+                        Random.nextInt(100),
+                        Random.nextInt(100)
+                    )
+                )
+            ).toCounterDbEntity()
+        )
     }
 }
